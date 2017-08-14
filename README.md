@@ -1,5 +1,5 @@
 # XenForo-ISO
-The ISO XenForo Add-on.
+The XenForo ISO Add-on.
 
 ## Installation
 1. Backup the original versions of files in the `library/XenForo/Search/DataHandler/` directory. The files that will be overwritten are core XenForo files. In case there are conflicts or you wish to uninstall this Add-on, you will need copies of the originals to go back to.
