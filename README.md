@@ -1,6 +1,10 @@
 # XenForo-ISO
 The XenForo ISO Add-on.
 
+This Add-on:
+ * Shows entire posts in search results, complete with images, quotes, and styles.
+ * Adds a link below each user's miniprofile linking to a search of all their posts in the current thread.
+
 ## Installation
 1. Backup the original versions of files in the `library/XenForo/Search/DataHandler/` directory. The files that will be overwritten are core XenForo files. In case there are conflicts or you wish to uninstall this Add-on, you will need copies of the originals to go back to.
 2. Upload the contents of the `upload/` directory to the root of your XenForo installation. Overwrite any existing copies.
