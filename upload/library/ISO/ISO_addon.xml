@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon addon_id="ISO" title="ISO" version_string="1.0.0" version_id="1" url="" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+	<admin_navigation/>
+	<admin_permissions/>
+	<admin_style_properties/>
+	<admin_templates/>
+	<admin_template_modifications/>
+	<code_events/>
+	<code_event_listeners/>
+	<cron/>
+	<email_templates/>
+	<email_template_modifications/>
+	<optiongroups/>
+	<permissions/>
+	<phrases>
+		<phrase title="ISO_iso_link_title" version_id="1" version_string="1.0.0"><![CDATA[Isolate Posts by {user}]]></phrase>
+	</phrases>
+	<route_prefixes/>
+	<style_properties/>
+	<templates/>
+	<public_template_modifications>
+		<modification template="search_result_thread" modification_key="ISO_parse_result_thread" description="Replace search results with HTML in thread" execution_order="10" enabled="1" action="str_replace">
+			<find><![CDATA[<blockquote class="snippet">
+			<a href="{xen:link threads, $thread}">{xen:helper snippet, $post.message, 150, {xen:array 'term={$search.search_query}', 'emClass=highlight', 'stripQuotes=1'}}</a>
+		</blockquote>]]></find>
+			<replace><![CDATA[<xen:comment>
+				$0
+			</xen:comment>
+			<blockquote class="messageText">
+				<xen:require css="message.css" />
+				{xen:raw $post.messageHtml}
+			</blockquote>
+			]]></replace>
+		</modification>
+		<modification template="search_result_post" modification_key="ISO_parse_result_post" description="Replace search results with HTML in post" execution_order="10" enabled="1" action="str_replace">
+			<find><![CDATA[<blockquote class="snippet">
+			<a href="{xen:link threads, $thread}">{xen:helper snippet, $post.message, 150, {xen:array 'term={$search.search_query}', 'emClass=highlight', 'stripQuotes=1'}}</a>
+		</blockquote>]]></find>
+			<replace><![CDATA[<xen:comment>
+				$0
+			</xen:comment>
+			<blockquote class="messageText">
+				<xen:require css="message.css" />
+				{xen:raw $post.messageHtml}
+			</blockquote>
+			]]></replace>
+		</modification>
+		<modification template="search_result_post" modification_key="ISO_parse_result_post" description="Replace search results with HTML in post" execution_order="10" enabled="1" action="str_replace">
+			<find><![CDATA[<xen:if is="@messageShowCustomFields]]></find>
+			<replace><![CDATA[<div><a href="index.php?search/search&title_only=0&keywords=&type[post][thread_id]={$user.thread_id}&type[post][group_discussion]=0&users={$user.username}">{xen:phrase ISO_iso_link_title, 'user={$user.username}'}</a></div>
+			$0]]></replace>
+		</modification>
+	</public_template_modifications>
+	<bb_code_media_sites/>
+	<bb_codes/>
+</addon>
