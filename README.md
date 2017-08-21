@@ -6,9 +6,8 @@ This Add-on:
  * Adds a link below each user's miniprofile linking to a search of all their posts in the current thread.
 
 ## Installation
-1. Backup the original versions of files in the `library/XenForo/Search/DataHandler/` directory. The files that will be overwritten are core XenForo files. In case there are conflicts or you wish to uninstall this Add-on, you will need copies of the originals to go back to.
-2. Upload the contents of the `upload/` directory to the root of your XenForo installation. Overwrite any existing copies.
-3. Install the Add-on using the `.xml` file using the `Install Add-on` page in the Admin Control Panel for your XenForo installation.
+1. Upload the contents of the `upload/` directory to the root of your XenForo installation. Overwrite any existing copies.
+2. Install the Add-on using the `.xml` file using the `Install Add-on` page in the Admin Control Panel for your XenForo installation.
 
 ## Use
 1. Go to any thread.
